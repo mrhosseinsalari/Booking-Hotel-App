@@ -1090,7 +1090,7 @@
         "height": 426,
         "url": "https://public.opendatasoft.com/api/explore/v2.1/catalog/datasets/airbnb-listings/files/2e202e79e908a132d144cc32168fcfc3"
       },
-      "xl_picture_url": null,
+      "xl_picture_url": "https://public.opendatasoft.com/api/explore/v2.1/catalog/datasets/airbnb-listings/files/2e202e79e908a132d144cc32168fcfc3",
       "host_id": "40565986",
       "host_url": "https://www.airbnb.com/users/show/40565986",
       "host_name": "Claudia",
