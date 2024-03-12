@@ -310,6 +310,16 @@
   height: 1.1rem;
 }
 
+.singleBookmark {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  row-gap: 1rem;
+}
+.singleBookmark .bookmarkItem {
+  width: 100%;
+}
+
 /* form */
 
 .form .formControl {

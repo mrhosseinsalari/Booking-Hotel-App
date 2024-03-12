@@ -1199,7 +1199,7 @@
       "countryCode": "DZ",
       "latitude": "23.18455079512732",
       "longitude": "3.795523257510883",
-      "host_location": "Abalessa Algeria",
+      "host_location": "Abalessa, Algeria",
       "id": 1
     },
     {
@@ -1208,7 +1208,7 @@
       "countryCode": "IR",
       "latitude": "34.32869425037187",
       "longitude": "46.724183117022086",
-      "host_location": "Mahidasht Iran (Islamic Republic of)",
+      "host_location": "Mahidasht, Iran (Islamic Republic of)",
       "id": 4
     },
     {
@@ -1217,7 +1217,7 @@
       "countryCode": "IR",
       "latitude": "35.31372444726279",
       "longitude": "47.03114358752335",
-      "host_location": "Sanandaj Iran (Islamic Republic of)",
+      "host_location": "Sanandaj, Iran (Islamic Republic of)",
       "id": 5
     },
     {
@@ -1226,7 +1226,7 @@
       "countryCode": "EG",
       "latitude": "25.02090651422749",
       "longitude": "29.09059588509316",
-      "host_location": "A Dakhla Oasis Egypt",
+      "host_location": "A Dakhla Oasis, Egypt",
       "id": 7
     },
     {
@@ -1235,7 +1235,7 @@
       "countryCode": "PK",
       "latitude": "28.43528783183169",
       "longitude": "67.78003711374224",
-      "host_location": "Baba Kot Pakistan",
+      "host_location": "Baba Kot, Pakistan",
       "id": 8
     }
   ]
