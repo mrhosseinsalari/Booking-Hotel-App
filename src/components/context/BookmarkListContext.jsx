@@ -1,6 +1,5 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { createContext } from "react";
-import useFetch from "../../hooks/useFetch";
 import axios from "axios";
 import toast from "react-hot-toast";
 
@@ -8,20 +7,48 @@ const BookmarkContext = createContext();
 const BASE_URL = "http://localhost:5000";
 
 function BookmarkListProvider({ children }) {
+  const [bookmarks, setBookmarks] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
   const [currentBookmark, setCurrentBookmark] = useState({});
-  const [isLoadingCurrBookmark, setIsLoadingCurrBookmark] = useState(false);
 
-  const { isLoading, data: bookmarks } = useFetch(`${BASE_URL}/bookmarks`);
+  useEffect(() => {
+    async function fetchBookmarkList() {
+      setIsLoading(true);
+      try {
+        const { data } = await axios.get(`${BASE_URL}/bookmarks`);
+        setBookmarks(data);
+      } catch (error) {
+        toast.error(error.message);
+      } finally {
+        setIsLoading(false);
+      }
+    }
+
+    fetchBookmarkList();
+  }, []);
 
   async function getBookmark(id) {
-    setIsLoadingCurrBookmark(true);
+    setIsLoading(true);
     try {
       const { data } = await axios.get(`${BASE_URL}/bookmarks/${id}`);
       setCurrentBookmark(data);
     } catch (error) {
       toast.error(error.message);
     } finally {
-      setIsLoadingCurrBookmark(false);
+      setIsLoading(false);
+    }
+  }
+
+  async function createBookmark(newBookmark) {
+    setIsLoading(true);
+    try {
+      const { data } = await axios.post(`${BASE_URL}/bookmarks`, newBookmark);
+      setCurrentBookmark(data);
+      setBookmarks((prevBookmarks) => [...prevBookmarks, data]);
+    } catch (error) {
+      toast.error(error.message);
+    } finally {
+      setIsLoading(false);
     }
   }
 
@@ -32,7 +59,7 @@ function BookmarkListProvider({ children }) {
         bookmarks,
         currentBookmark,
         getBookmark,
-        isLoadingCurrBookmark,
+        createBookmark,
       }}
     >
       {children}

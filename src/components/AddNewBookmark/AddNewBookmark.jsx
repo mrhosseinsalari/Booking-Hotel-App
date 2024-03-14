@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import Loader from "../Loader/Loader";
 import ReactCountryFlag from "react-country-flag";
+import { useBookmarks } from "../context/BookmarkListContext";
 
 const BASE_GEOCODING_URL =
   "https://api.bigdatacloud.net/data/reverse-geocode-client";
@@ -16,6 +17,7 @@ function AddNewBookmark() {
   const [countryCode, setCountryCode] = useState("");
   const [isLoadingGeoCoding, setIsLoadingGeoCoding] = useState(false);
   const [geoCodingError, setGeoCodingError] = useState(null);
+  const { createBookmark } = useBookmarks();
 
   useEffect(() => {
     if (!lat || !lng) return;
@@ -52,13 +54,29 @@ function AddNewBookmark() {
     navigate(-1);
   };
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!cityName || !country) return;
+
+    const newBookmark = {
+      cityName,
+      country,
+      countryCode,
+      latitude: lat,
+      longitude: lng,
+      host_location: `${cityName}, ${country}`,
+    };
+    await createBookmark(newBookmark);
+    navigate("/bookmarks");
+  };
+
   if (isLoadingGeoCoding) return <Loader />;
   if (geoCodingError) return <p>{geoCodingError}</p>;
 
   return (
     <div className="addNewBookmark">
       <h2>Bookmark New Location</h2>
-      <form className="form">
+      <form className="form" onSubmit={handleSubmit}>
         <div className="formControl">
           <label htmlFor="cityName">CityName</label>
           <input

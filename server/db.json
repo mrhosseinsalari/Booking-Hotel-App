@@ -1194,24 +1194,6 @@
   ],
   "bookmarks": [
     {
-      "cityName": "Abalessa",
-      "country": "Algeria",
-      "countryCode": "DZ",
-      "latitude": "23.18455079512732",
-      "longitude": "3.795523257510883",
-      "host_location": "Abalessa, Algeria",
-      "id": 1
-    },
-    {
-      "cityName": "Mahidasht",
-      "country": "Iran (Islamic Republic of)",
-      "countryCode": "IR",
-      "latitude": "34.32869425037187",
-      "longitude": "46.724183117022086",
-      "host_location": "Mahidasht, Iran (Islamic Republic of)",
-      "id": 4
-    },
-    {
       "cityName": "Sanandaj",
       "country": "Iran (Islamic Republic of)",
       "countryCode": "IR",
@@ -1221,22 +1203,58 @@
       "id": 5
     },
     {
-      "cityName": "A Dakhla Oasis",
-      "country": "Egypt",
-      "countryCode": "EG",
-      "latitude": "25.02090651422749",
-      "longitude": "29.09059588509316",
-      "host_location": "A Dakhla Oasis, Egypt",
-      "id": 7
+      "cityName": "Moscow",
+      "country": "Russian Federation (the)",
+      "countryCode": "RU",
+      "latitude": "55.74954881162805",
+      "longitude": "37.61993408203126",
+      "host_location": "Moscow, Russian Federation (the)",
+      "id": 9
     },
     {
-      "cityName": "Baba Kot",
-      "country": "Pakistan",
-      "countryCode": "PK",
-      "latitude": "28.43528783183169",
-      "longitude": "67.78003711374224",
-      "host_location": "Baba Kot, Pakistan",
-      "id": 8
+      "cityName": "Riyadh",
+      "country": "Saudi Arabia",
+      "countryCode": "SA",
+      "latitude": "24.64615157425718",
+      "longitude": "46.8017578125",
+      "host_location": "Riyadh, Saudi Arabia",
+      "id": 10
+    },
+    {
+      "cityName": "Qom",
+      "country": "Iran (Islamic Republic of)",
+      "countryCode": "IR",
+      "latitude": "34.64166024446108",
+      "longitude": "50.88043212890626",
+      "host_location": "Qom, Iran (Islamic Republic of)",
+      "id": 11
+    },
+    {
+      "cityName": "Berlin",
+      "country": "Germany",
+      "countryCode": "DE",
+      "latitude": "52.57401105855098",
+      "longitude": "13.337402343750002",
+      "host_location": "Berlin, Germany",
+      "id": 12
+    },
+    {
+      "cityName": "Eslov",
+      "country": "Sweden",
+      "countryCode": "SE",
+      "latitude": "55.8123403726527",
+      "longitude": "13.381347656250002",
+      "host_location": "Eslov, Sweden",
+      "id": 13
+    },
+    {
+      "cityName": "Oslo",
+      "country": "Norway",
+      "countryCode": "NO",
+      "latitude": "59.9048652668755",
+      "longitude": "10.744628906250002",
+      "host_location": "Oslo, Norway",
+      "id": 14
     }
   ]
 }
