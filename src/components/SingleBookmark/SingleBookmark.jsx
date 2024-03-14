@@ -13,7 +13,7 @@ function SingleBookmark() {
     getBookmark(id);
   }, [id]);
 
-  if (isLoading && !currentBookmark) return <Loader />;
+  if (isLoading || !currentBookmark) return <Loader />;
 
   return (
     <div className="singleBookmark">
@@ -22,9 +22,9 @@ function SingleBookmark() {
       </button>
       <h2>{currentBookmark.host_location}</h2>
       <div className="bookmarkItem">
-        <div className="title">
+        <div>
           <ReactCountryFlag svg countryCode={currentBookmark.countryCode} />
-          <strong>{currentBookmark.cityName}</strong>
+          <strong className="cityName">{currentBookmark.cityName}</strong>
         </div>
         <span>{currentBookmark.country}</span>
       </div>

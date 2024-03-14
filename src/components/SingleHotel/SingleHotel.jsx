@@ -11,7 +11,7 @@ function SingleHotel() {
     getHotel(id);
   }, [id]);
 
-  if (isLoadingCurrHotel || !currentHotel) <Loader />;
+  if (isLoadingCurrHotel || !currentHotel) return <Loader />;
 
   return (
     <div className="room">

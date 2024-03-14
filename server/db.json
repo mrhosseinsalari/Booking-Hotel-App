@@ -1194,67 +1194,49 @@
   ],
   "bookmarks": [
     {
-      "cityName": "Sanandaj",
+      "cityName": "Qom",
       "country": "Iran (Islamic Republic of)",
       "countryCode": "IR",
-      "latitude": "35.31372444726279",
-      "longitude": "47.03114358752335",
-      "host_location": "Sanandaj, Iran (Islamic Republic of)",
-      "id": 5
-    },
-    {
-      "cityName": "Moscow",
-      "country": "Russian Federation (the)",
-      "countryCode": "RU",
-      "latitude": "55.74954881162805",
-      "longitude": "37.61993408203126",
-      "host_location": "Moscow, Russian Federation (the)",
-      "id": 9
+      "latitude": "34.641104919182844",
+      "longitude": "50.88008880615235",
+      "host_location": "Qom, Iran (Islamic Republic of)",
+      "id": 1
     },
     {
       "cityName": "Riyadh",
       "country": "Saudi Arabia",
       "countryCode": "SA",
-      "latitude": "24.64615157425718",
-      "longitude": "46.8017578125",
+      "latitude": "24.64545897738814",
+      "longitude": "46.79077148437501",
       "host_location": "Riyadh, Saudi Arabia",
-      "id": 10
+      "id": 2
     },
     {
-      "cityName": "Qom",
-      "country": "Iran (Islamic Republic of)",
-      "countryCode": "IR",
-      "latitude": "34.64166024446108",
-      "longitude": "50.88043212890626",
-      "host_location": "Qom, Iran (Islamic Republic of)",
-      "id": 11
+      "cityName": "Moscow",
+      "country": "Russian Federation (the)",
+      "countryCode": "RU",
+      "latitude": "55.72485077677571",
+      "longitude": "37.66113281250001",
+      "host_location": "Moscow, Russian Federation (the)",
+      "id": 3
+    },
+    {
+      "cityName": "Chhindwara",
+      "country": "India",
+      "countryCode": "IN",
+      "latitude": "22.094796819148748",
+      "longitude": "79.04663085937501",
+      "host_location": "Chhindwara, India",
+      "id": 4
     },
     {
       "cityName": "Berlin",
       "country": "Germany",
       "countryCode": "DE",
-      "latitude": "52.57401105855098",
-      "longitude": "13.337402343750002",
+      "latitude": "52.5326632718481",
+      "longitude": "13.491210937500002",
       "host_location": "Berlin, Germany",
-      "id": 12
-    },
-    {
-      "cityName": "Eslov",
-      "country": "Sweden",
-      "countryCode": "SE",
-      "latitude": "55.8123403726527",
-      "longitude": "13.381347656250002",
-      "host_location": "Eslov, Sweden",
-      "id": 13
-    },
-    {
-      "cityName": "Oslo",
-      "country": "Norway",
-      "countryCode": "NO",
-      "latitude": "59.9048652668755",
-      "longitude": "10.744628906250002",
-      "host_location": "Oslo, Norway",
-      "id": 14
+      "id": 5
     }
   ]
 }

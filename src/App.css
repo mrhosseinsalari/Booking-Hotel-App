@@ -289,10 +289,14 @@
   justify-content: space-between;
 }
 
-.bookmarkItem .title {
+.bookmarkDetail {
   display: flex;
   align-items: center;
   gap: 1rem;
+}
+
+.bookmarkItem .cityName {
+  margin-left: 1rem;
 }
 
 .bookmarkList .bookmarkItem.current-bookmark {
