@@ -1,4 +1,5 @@
-import { createContext, useReducer } from "react";
+import { createContext, useContext, useReducer } from "react";
+import toast from "react-hot-toast";
 
 const AuthContext = createContext();
 
@@ -24,7 +25,7 @@ const FAKE_USER = {
   password: "1234",
 };
 
-export default function AuthContextProvider({ children }) {
+export default function AuthProvider({ children }) {
   const [{ user, isAuthenticated }, dispatch] = useReducer(
     authReducer,
     initialState
@@ -33,6 +34,7 @@ export default function AuthContextProvider({ children }) {
   function login(email, password) {
     if (email === FAKE_USER.email && password === FAKE_USER.password)
       dispatch({ type: "login", payload: FAKE_USER });
+    else toast.error("User is not defined");
   }
 
   function logout() {
@@ -44,4 +46,8 @@ export default function AuthContextProvider({ children }) {
       {children}
     </AuthContext.Provider>
   );
+}
+
+export function useAuth() {
+  return useContext(AuthContext);
 }
