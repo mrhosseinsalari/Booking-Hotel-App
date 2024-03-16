@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useReducer } from "react";
 import { createContext } from "react";
 import axios from "axios";
 import toast from "react-hot-toast";
@@ -6,21 +6,62 @@ import toast from "react-hot-toast";
 const BookmarkContext = createContext();
 const BASE_URL = "http://localhost:5000";
 
+const initialState = {
+  bookmarks: [],
+  isLoading: false,
+  currentBookmark: {},
+  error: null,
+};
+
+function bookmarkReducer(state, { type, payload }) {
+  switch (type) {
+    case "loading":
+      return { ...state, isLoading: true };
+    case "bookmarks/loaded":
+      return { ...state, isLoading: false, bookmarks: payload };
+    case "bookmark/loaded":
+      return { ...state, isLoading: false, currentBookmark: payload };
+    case "bookmark/created":
+      return {
+        ...state,
+        isLoading: false,
+        bookmarks: [...state.bookmarks, payload],
+        currentBookmark: payload,
+      };
+    case "bookmark/deleted":
+      return {
+        ...state,
+        isLoading: false,
+        bookmarks: state.bookmarks.filter(
+          (bookmark) => bookmark.id !== payload
+        ),
+        currentBookmark: null,
+      };
+    case "rejected":
+      return { ...state, isLoading: false, error: payload };
+    default:
+      throw new Error("Unknown action");
+  }
+}
+
 function BookmarkListProvider({ children }) {
-  const [bookmarks, setBookmarks] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
-  const [currentBookmark, setCurrentBookmark] = useState({});
+  const [{ bookmarks, isLoading, currentBookmark }, dispatch] = useReducer(
+    bookmarkReducer,
+    initialState
+  );
 
   useEffect(() => {
     async function fetchBookmarkList() {
-      setIsLoading(true);
+      dispatch({ type: "loading" });
       try {
         const { data } = await axios.get(`${BASE_URL}/bookmarks`);
-        setBookmarks(data);
+        dispatch({ type: "bookmarks/loaded", payload: data });
       } catch (error) {
         toast.error(error.message);
-      } finally {
-        setIsLoading(false);
+        dispatch({
+          type: "rejected",
+          payload: "an Error occurred in loading bookmarks",
+        });
       }
     }
 
@@ -28,41 +69,40 @@ function BookmarkListProvider({ children }) {
   }, []);
 
   async function getBookmark(id) {
-    setIsLoading(true);
+    if (Number(id) === currentBookmark?.id) return;
+
+    dispatch({ type: "loading" });
     try {
       const { data } = await axios.get(`${BASE_URL}/bookmarks/${id}`);
-      setCurrentBookmark(data);
+      dispatch({ type: "bookmark/loaded", payload: data });
     } catch (error) {
       toast.error(error.message);
-    } finally {
-      setIsLoading(false);
+      dispatch({
+        type: "rejected",
+        payload: "an Error occurred in loading single bookmark",
+      });
     }
   }
 
   async function createBookmark(newBookmark) {
-    setIsLoading(true);
+    dispatch({ type: "loading" });
     try {
       const { data } = await axios.post(`${BASE_URL}/bookmarks`, newBookmark);
-      setCurrentBookmark(data);
-      setBookmarks((prevBookmarks) => [...prevBookmarks, data]);
+      dispatch({ type: "bookmark/created", payload: data });
     } catch (error) {
       toast.error(error.message);
-    } finally {
-      setIsLoading(false);
+      dispatch({ type: "rejected", payload: error.message });
     }
   }
 
   async function deleteBookmark(id) {
-    setIsLoading(true);
+    dispatch({ type: "loading" });
     try {
       await axios.delete(`${BASE_URL}/bookmarks/${id}`);
-      setBookmarks((prevBookmarks) =>
-        prevBookmarks.filter((bookmark) => bookmark.id !== id)
-      );
+      dispatch({ type: "bookmark/deleted", payload: id });
     } catch (error) {
       toast.error(error.message);
-    } finally {
-      setIsLoading(false);
+      dispatch({ type: "rejected", payload: error.message });
     }
   }
 
@@ -87,3 +127,10 @@ export default BookmarkListProvider;
 export function useBookmarks() {
   return useContext(BookmarkContext);
 }
+
+// context + reducer => value={{state, dispatch}} => SYNC ACTION
+
+// ASYNC ACTION => reducer function is a PURE function !!
+
+// 1. pass dispatch
+// 2. pass actions : OK

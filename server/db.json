@@ -1230,13 +1230,13 @@
       "id": 4
     },
     {
-      "cityName": "Berlin",
-      "country": "Germany",
-      "countryCode": "DE",
-      "latitude": "52.5326632718481",
-      "longitude": "13.491210937500002",
-      "host_location": "Berlin, Germany",
-      "id": 5
+      "cityName": "Paris",
+      "country": "France",
+      "countryCode": "FR",
+      "latitude": "48.853838680133016",
+      "longitude": "2.349014282226563",
+      "host_location": "Paris, France",
+      "id": 6
     }
   ]
 }
