@@ -38,9 +38,6 @@ function Map({ markerLocations }) {
         zoom={10}
         scrollWheelZoom={true}
       >
-        <button onClick={getPosition} className="getLocation">
-          {isLoadingPosition ? "Loading ..." : "Use Your Location"}
-        </button>
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png"
@@ -53,6 +50,9 @@ function Map({ markerLocations }) {
           </Marker>
         ))}
       </MapContainer>
+      <button onClick={getPosition} className="getLocation">
+        {isLoadingPosition ? "Loading ..." : "Use Your Location"}
+      </button>
     </div>
   );
 }
