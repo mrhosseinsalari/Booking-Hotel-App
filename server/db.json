@@ -1072,7 +1072,7 @@
       "access": "As a guest, you have access to the living room, kitchen, bathroom, toilet, laundry room and balcony. Mi casa es su casa.",
       "interaction": "If you need any help during your stay, whether organising your public transport to the airport or finding a great local place to have dinner, I'm happy to help.",
       "house_rules": "No pets allowed, no smoking in the house, but feel free to smoke on the balcony. As I live in a quiet street, this is not a place for partying in the house.",
-      "thumbnail_url": null,
+      "thumbnail_url": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/378217082.jpg?k=d676f3acfc54bbc318ca0ff146ed97bebfa8bc10fc56c671b44c0f4eee75a49f&o=&hp=1",
       "medium_url": null,
       "picture_url": {
         "thumbnail": true,
@@ -1090,7 +1090,7 @@
         "height": 426,
         "url": "https://public.opendatasoft.com/api/explore/v2.1/catalog/datasets/airbnb-listings/files/2e202e79e908a132d144cc32168fcfc3"
       },
-      "xl_picture_url": "https://public.opendatasoft.com/api/explore/v2.1/catalog/datasets/airbnb-listings/files/2e202e79e908a132d144cc32168fcfc3",
+      "xl_picture_url": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/378217082.jpg?k=d676f3acfc54bbc318ca0ff146ed97bebfa8bc10fc56c671b44c0f4eee75a49f&o=&hp=1",
       "host_id": "40565986",
       "host_url": "https://www.airbnb.com/users/show/40565986",
       "host_name": "Claudia",
