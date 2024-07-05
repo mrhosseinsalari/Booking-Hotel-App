@@ -2,14 +2,24 @@
 
 .header {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  gap: 1rem;
+  width: 100%;
+  max-width: 1280px;
+  margin: 1rem auto;
+  gap: 2rem 1rem;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  gap: 2rem;
 }
 .headerSearch {
   display: flex;
   width: 100%;
-  max-width: 900px;
+  max-width: 1280px;
   justify-content: space-between;
   align-items: center;
   gap: 1rem;
@@ -19,6 +29,7 @@
 }
 
 .headerSearchInput {
+  width: 100%;
   padding: 0.7rem 0.5rem;
   font-size: 1rem;
 }
@@ -28,7 +39,7 @@
   position: relative;
 }
 .headerSearchItem .seperator {
-  display: inline-block;
+  display: none;
   width: 1px;
   height: 30px;
   background-color: var(--text-400);
@@ -120,6 +131,15 @@
   border-radius: 1rem;
 }
 
+.headerSearchItem.search-field {
+  flex: 1;
+}
+
+.headerSearchItem.date-range,
+.headerSearchItem.filter-options {
+  display: none;
+}
+
 /*  location list */
 .nearbyLocation {
   max-width: 1280px;
@@ -130,7 +150,7 @@
 }
 .locationList {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
 }
 
@@ -253,13 +273,12 @@
   margin-top: 1rem;
   display: flex;
   justify-content: space-between;
-  height: calc(100vh - 130px);
-  /* background-color: var(--text-100); */
+  height: calc(100vh - 165px);
   align-items: stretch;
 }
 
 .sidebar {
-  width: 35%;
+  width: 50%;
   overflow-y: scroll;
   padding-right: 1rem;
 }
@@ -267,12 +286,6 @@
 .searchItem.current-hotel {
   border: 3px solid var(--primary-700);
   border-radius: 1rem;
-}
-
-@media screen and (min-width: 768px) {
-  .sidebar {
-    width: 50%;
-  }
 }
 
 /* bookmark page */
@@ -404,4 +417,39 @@ a.active {
   display: flex;
   align-items: center;
   gap: 0.4rem;
+}
+
+@media screen and (min-width: 375px) {
+  .locationList {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+}
+
+@media screen and (min-width: 640px) {
+  .headerSearchItem.search-field {
+    flex: auto;
+  }
+  .headerSearchItem.date-range,
+  .headerSearchItem.filter-options {
+    display: flex;
+  }
+  .headerSearchItem .seperator {
+    display: inline-block;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .header {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .navbar {
+    width: auto;
+  }
+  .headerSearch {
+    max-width: 900px;
+  }
+  .appLayout {
+    height: calc(100vh - 145px);
+  }
 }

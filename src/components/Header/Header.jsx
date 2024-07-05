@@ -21,7 +21,7 @@ import {
 import { useAuth } from "../context/AuthProvider";
 
 function Header() {
-  const [searchParams, setSearchParams] = useSearchParams();
+  const [searchParams] = useSearchParams();
   const [destination, setDestination] = useState(
     searchParams.get("destination") || ""
   );
@@ -68,10 +68,13 @@ function Header() {
 
   return (
     <div className="header">
-      <NavLink to="/">Home</NavLink>
-      <NavLink to="/bookmarks">Bookmarks</NavLink>
+      <div className="navbar">
+        <NavLink to="/">Home</NavLink>
+        <NavLink to="/bookmarks">Bookmarks</NavLink>
+        <User />
+      </div>
       <div className="headerSearch">
-        <div className="headerSearchItem">
+        <div className="headerSearchItem search-field">
           <MdLocationOn className="headerIcon locationIcon" />
           <input
             value={destination}
@@ -84,7 +87,7 @@ function Header() {
           />
           <span className="seperator"></span>
         </div>
-        <div className="headerSearchItem">
+        <div className="headerSearchItem date-range">
           <HiCalendar className="headerIcon dateIcon" />
           <div className="dateDropDown" onClick={() => setOpenDate(!openDate)}>
             {`${format(date[0].startDate, "MM/dd/yyyy")} to ${format(
@@ -103,7 +106,7 @@ function Header() {
           )}
           <div className="seperator"></div>
         </div>
-        <div className="headerSearchItem">
+        <div className="headerSearchItem filter-options">
           <div id="optionDropDown" onClick={() => setOpenOptions(!openOptions)}>
             {options.adult} adult &bull; {options.children} children &bull;{" "}
             {options.room} room
@@ -123,7 +126,6 @@ function Header() {
           </button>
         </div>
       </div>
-      <User />
     </div>
   );
 }
