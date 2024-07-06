@@ -1194,15 +1194,6 @@
   ],
   "bookmarks": [
     {
-      "cityName": "Qom",
-      "country": "Iran (Islamic Republic of)",
-      "countryCode": "IR",
-      "latitude": "34.641104919182844",
-      "longitude": "50.88008880615235",
-      "host_location": "Qom, Iran (Islamic Republic of)",
-      "id": 1
-    },
-    {
       "cityName": "Riyadh",
       "country": "Saudi Arabia",
       "countryCode": "SA",
@@ -1210,15 +1201,6 @@
       "longitude": "46.79077148437501",
       "host_location": "Riyadh, Saudi Arabia",
       "id": 2
-    },
-    {
-      "cityName": "Moscow",
-      "country": "Russian Federation (the)",
-      "countryCode": "RU",
-      "latitude": "55.72485077677571",
-      "longitude": "37.66113281250001",
-      "host_location": "Moscow, Russian Federation (the)",
-      "id": 3
     },
     {
       "cityName": "Chhindwara",
@@ -1237,6 +1219,24 @@
       "longitude": "2.349014282226563",
       "host_location": "Paris, France",
       "id": 6
+    },
+    {
+      "cityName": "Dingxi",
+      "country": "China",
+      "countryCode": "CN",
+      "latitude": "34.97602274807418",
+      "longitude": "105.00716689446799",
+      "host_location": "Dingxi, China",
+      "id": 7
+    },
+    {
+      "cityName": "Viterbo",
+      "country": "Italy",
+      "countryCode": "IT",
+      "latitude": "42.41583497367862",
+      "longitude": "12.105431929984544",
+      "host_location": "Viterbo, Italy",
+      "id": 8
     }
   ]
 }
